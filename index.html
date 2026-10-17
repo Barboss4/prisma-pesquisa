@@ -1,362 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços de Formatação e Análise de Dados</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            background-color: #1f485a;
-            justify-content: center; /* Centraliza horizontalmente */
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        header .logo {
-            width: 50px; /* Ajuste o tamanho conforme necessário */
-            height: auto;
-            margin-right: 10px; /* Espaço entre a imagem e o texto */
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-
-        nav {
-            margin: 0;
-            padding: 10px;
-            text-align: center;
-            background-color: #333;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 20px;
-        }
-
-        .services, .funcionamento, .pricing, .team, .testimonials, .contact {
-            background-color: #f4f4f4;
-            margin-bottom: 20px;
-            padding: 20px;
-        }
-
-        h2 {
-            color: #4CAF50;
-        }
-
-        .contact form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact label, .contact input, .contact textarea {
-            margin-bottom: 10px;
-        }
-
-        .centralizar-imagem {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .pricing form {
-            margin: 0 auto;
-            max-width: 400px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .pricing input, .pricing select {
-            margin-bottom: 10px;
-            padding: 8px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        .pricing button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .pricing button:hover {
-            background-color: #45a049;
-        }
-        
-        .pricing-result {
-            margin-top: 20px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        /* Estilo do botão Back to Top */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #1f485a;
-            color: white;
-            border: none;
-            border-radius: 5px; /* Altere para quadrado com bordas ligeiramente arredondadas */
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px; /* Aumente o tamanho da fonte para melhor visibilidade */
-            text-decoration: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            text-align: center; /* Alinhar o texto ao centro */
-        }
-
-        /* Exibir o botão quando o usuário rolar para baixo */
-        .back-to-top.show {
-            opacity: 1;
-        }
-
-        /* Estilo para o botão quando o mouse passa por cima */
-        .back-to-top:hover {
-            background-color: #082633;
-        }
-
-        
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prisma Pesquisa | Consultoria científica e análise de dados</title>
+  <meta name="description" content="A Prisma Pesquisa oferece consultoria científica em análise estatística, metodologia, tratamento de dados, revisão acadêmica e formatação ABNT.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#123c46">
+  <link rel="canonical" href="https://barboss4.github.io/prisma-pesquisa/">
+  <link rel="icon" href="logo-prisma.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Prisma Pesquisa">
+  <meta property="og:url" content="https://barboss4.github.io/prisma-pesquisa/">
+  <meta property="og:title" content="Prisma Pesquisa | Consultoria científica e análise de dados">
+  <meta property="og:description" content="Método, dados e clareza para decisões de pesquisa mais bem fundamentadas.">
+  <meta property="og:image" content="https://barboss4.github.io/prisma-pesquisa/logo-prisma.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Símbolo geométrico da Prisma Pesquisa">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prisma Pesquisa | Consultoria científica e análise de dados">
+  <meta name="twitter:description" content="Método, dados e clareza para decisões de pesquisa mais bem fundamentadas.">
+  <meta name="twitter:image" content="https://barboss4.github.io/prisma-pesquisa/logo-prisma.png">
+  <meta name="twitter:image:alt" content="Símbolo geométrico da Prisma Pesquisa">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Prisma Pesquisa",
+    "url": "https://barboss4.github.io/prisma-pesquisa/",
+    "logo": "https://barboss4.github.io/prisma-pesquisa/logo-prisma.png",
+    "description": "Consultoria científica e acadêmica em análise estatística, metodologia, análise de dados, revisão e formatação acadêmica.",
+    "email": "tccanapolis@gmail.com",
+    "telephone": "+55 62 99281-8326",
+    "areaServed": {"@type": "Country", "name": "Brasil"},
+    "knowsAbout": ["Análise estatística", "Metodologia científica", "Análise de dados", "Revisão científica", "Formatação acadêmica"],
+    "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "telephone": "+55 62 99281-8326", "availableLanguage": "Portuguese"},
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de consultoria acadêmica",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Análise estatística e interpretação de resultados"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Consultoria em metodologia científica"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Revisão científica e formatação acadêmica"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tratamento e análise de dados"}}
+      ]
+    }
+  }
+  </script>
 </head>
-
 <body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#topo" aria-label="Prisma Pesquisa — início"><img src="logo-prisma.png" alt="" width="48" height="48"><span class="brand-copy"><strong data-brand>Prisma <span>Pesquisa</span></strong><small>Consultoria científica</small></span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-principal"><span class="sr-only">Abrir menu</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+      <nav id="menu-principal" class="main-nav" aria-label="Navegação principal"><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#compromisso">Compromisso</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a><a class="nav-mobile-cta" href="https://wa.me/5562992818326?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20do%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar avaliação <span aria-hidden="true">↗</span></a></nav>
+      <a class="button button-small header-cta" href="https://wa.me/5562992818326?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20do%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar avaliação</a>
+    </div>
+  </header>
 
-    <header>
-        <img src="logo.jpg" alt="Logo" class="logo">
-        <h1>TCCexpresso</h1>
-    </header>
-
-    <nav>
-        <a href="#services">Serviços</a>
-        <a href="#funcionamento">Como Funciona</a>
-        <a href="#pricing">Preços</a>
-        <a href="#team">Equipe</a>
-        <a href="#contact">Contato</a>
-    </nav>
-
-    <section id="services" class="services">
-        <h2>Nossos Serviços</h2>
-        <p><strong>Formatação e Criação de Documentos:</strong> Formatação de TCC, dissertações, artigos e outros documentos
-            acadêmicos seguindo as normas ABNT, APA, e outras.</p>
-        <p><strong>Análise de Dados e Estatística:</strong> Auxílio em projetos acadêmicos e de pesquisa com análise estatística,
-            visualização de dados e interpretação.</p>
-        <p><strong>Orientação Acadêmica:</strong> Orientação para estudantes e profissionais na organização e desenvolvimento de seus
-            trabalhos.</p>
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Consultoria acadêmica e científica</p>
+          <h1 id="hero-title">Sua pesquisa com mais <em>clareza, método e confiança.</em></h1>
+          <p class="hero-lead">Suporte técnico para análise estatística, metodologia científica, tratamento de dados, revisão e apresentação de resultados — do planejamento à comunicação final.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/5562992818326?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20do%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar avaliação do projeto <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#servicos">Conhecer os serviços <span aria-hidden="true">↓</span></a>
+          </div>
+          <ul class="trust-list" aria-label="Diferenciais do atendimento"><li>Escopo definido antes do início</li><li>Acompanhamento durante o projeto</li><li>Confidencialidade no atendimento</li></ul>
+        </div>
+        <div class="hero-panel" aria-label="Áreas de atuação">
+          <div class="panel-heading"><span>Da pergunta aos resultados</span><span class="status-dot">Análise individual da demanda</span></div>
+          <div class="research-flow">
+            <div><span>01</span><strong>Planejar</strong><small>problema, objetivos e método</small></div>
+            <div><span>02</span><strong>Analisar</strong><small>dados, evidências e resultados</small></div>
+            <div><span>03</span><strong>Comunicar</strong><small>texto, gráficos e apresentação</small></div>
+          </div>
+          <p>Para artigos, projetos de pesquisa, dissertações, teses e trabalhos acadêmicos.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="funcionamento" class="funcionamento">
-        <h2>Funcionamento</h2>
-        <p>Nosso processo é transparente e eficiente, garantindo que você tenha total controle sobre o andamento do seu projeto. Veja como funciona:</p>
+    <section class="section" id="servicos" aria-labelledby="servicos-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">Serviços</p><h2 id="servicos-title">Apoio especializado para cada etapa da pesquisa</h2></div><p>Escolha uma frente específica ou combine serviços conforme as necessidades reais do seu projeto.</p></div>
+        <div class="service-grid">
+          <article class="service-card featured"><span class="card-number">01</span><h3>Análise estatística</h3><p>Planejamento da análise, aplicação de métodos adequados e interpretação técnica dos resultados.</p><ul><li>Estatística descritiva e inferencial</li><li>Interpretação de resultados</li><li>Apoio na escolha dos testes</li></ul><a class="service-link" href="#orcamento" data-service="Análise estatística e interpretação">Avaliar este serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card"><span class="card-number">02</span><h3>Metodologia científica</h3><p>Consultoria para alinhar pergunta, objetivos, desenho do estudo e estratégia metodológica.</p><a class="service-link" href="#orcamento" data-service="Metodologia científica">Avaliar este serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card"><span class="card-number">03</span><h3>Tratamento de dados</h3><p>Organização, limpeza, codificação e análise de bases para pesquisas acadêmicas e científicas.</p><a class="service-link" href="#orcamento" data-service="Tratamento e análise de dados">Avaliar este serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card"><span class="card-number">04</span><h3>Revisão e formatação</h3><p>Revisão textual e adequação a ABNT, APA e outras normas indicadas pela instituição ou periódico.</p><a class="service-link" href="#orcamento" data-service="Revisão e formatação acadêmica">Avaliar este serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card"><span class="card-number">05</span><h3>Gráficos e visualizações</h3><p>Construção de tabelas, gráficos e visualizações científicas claras, consistentes e informativas.</p><a class="service-link" href="#orcamento" data-service="Gráficos e visualizações científicas">Avaliar este serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card"><span class="card-number">06</span><h3>Artigos, dissertações e teses</h3><p>Consultoria técnica para estrutura, coerência, método e comunicação científica do seu trabalho.</p><a class="service-link" href="#orcamento" data-service="Consultoria para artigo, dissertação ou tese">Avaliar este serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card"><span class="card-number">07</span><h3>Apresentações acadêmicas</h3><p>Organização visual e narrativa de slides para bancas, seminários e apresentações científicas.</p><a class="service-link" href="#orcamento" data-service="Apresentação acadêmica">Avaliar este serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-cta"><p class="eyebrow">Precisa de outro apoio?</p><h3>Conte o contexto do seu projeto.</h3><p>Avaliamos demandas legítimas de pesquisa e indicamos o formato de suporte adequado.</p><a class="text-link" href="https://wa.me/5562992818326?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20uma%20demanda%20acad%C3%AAmica." target="_blank" rel="noopener noreferrer">Conversar sobre o projeto <span aria-hidden="true">↗</span></a></article>
+        </div>
+      </div>
+    </section>
 
-        <ol>
-            <li><strong>Início do Serviço:</strong> Para iniciar o serviço, é necessário um pagamento inicial de <strong>30%</strong> do valor total. Este valor é usado para garantir a reserva de nossa equipe e o início imediato do trabalho.</li>
-            <li><strong>Acompanhamento em Tempo Real:</strong> Durante todo o processo, você poderá acompanhar o progresso do seu projeto por meio de um link que será enviado a você. Este link dará acesso a um documento no Google Drive, onde você poderá ver as atualizações e o desenvolvimento em tempo real.</li>
-            <li><strong>Finalização e Entrega:</strong> Após a conclusão do serviço, a entrega final será realizada conforme o prazo acordado. O pagamento restante de <strong>70%</strong> será solicitado antes da entrega final. Garantimos que você ficará satisfeito com o resultado.</li>
-            <li><strong>Metodos de pagamento:</strong> Pix, Transferência bancária, Cartão de crédito, Boleto bancário, Pagseguro.</li>
+    <section class="section process-section" id="como-funciona" aria-labelledby="processo-title">
+      <div class="container process-grid">
+        <div class="process-intro"><p class="eyebrow">Como funciona</p><h2 id="processo-title">Um processo simples, transparente e alinhado ao seu projeto.</h2><p>Antes de começar, entendemos a demanda, os arquivos disponíveis, o prazo e o resultado esperado. Você sabe o que será feito e pode acompanhar a execução.</p><a class="button button-outline" href="#orcamento">Descrever meu projeto</a></div>
+        <ol class="steps">
+          <li><span>01</span><div><h3>Diagnóstico da demanda</h3><p>Você apresenta o projeto, a etapa atual, a necessidade e o prazo desejado.</p></div></li>
+          <li><span>02</span><div><h3>Escopo e orçamento</h3><p>Definimos entregáveis, cronograma e condições antes do início do atendimento.</p></div></li>
+          <li><span>03</span><div><h3>Execução acompanhada</h3><p>O serviço é desenvolvido conforme o escopo, com comunicação durante as etapas acordadas.</p></div></li>
+          <li><span>04</span><div><h3>Entrega e esclarecimentos</h3><p>Você recebe os materiais combinados e as orientações necessárias para compreendê-los e utilizá-los.</p></div></li>
         </ol>
-    
-        <p>Estamos comprometidos em fornecer um serviço de alta qualidade e transparência em todas as etapas do processo. Sua satisfação é nossa prioridade!</p>
-    
-        <figure>
-            <img src="banner.png" alt="Descrição da imagem" class="centralizar-imagem">
-        </figure>
+      </div>
     </section>
 
-    <section id="pricing" class="pricing">
-        <h2>Preços</h2>
-        <form id="pricing-form">
+    <section class="section values-section" id="compromisso" aria-labelledby="compromisso-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">Compromisso profissional</p><h2 id="compromisso-title">Suporte que respeita sua autoria e a integridade acadêmica</h2></div><p>Nosso papel é oferecer orientação técnica, científica e editorial. Decisões intelectuais e autoria permanecem com o pesquisador.</p></div>
+        <div class="values-grid">
+          <article><span aria-hidden="true">✓</span><h3>Rigor técnico</h3><p>Métodos e entregas coerentes com a pergunta de pesquisa e com os dados disponíveis.</p></article>
+          <article><span aria-hidden="true">✓</span><h3>Comunicação clara</h3><p>Explicações objetivas para que você compreenda o processo e os resultados.</p></article>
+          <article><span aria-hidden="true">✓</span><h3>Confidencialidade</h3><p>Informações e arquivos são tratados somente para avaliar e executar o serviço solicitado.</p></article>
+          <article><span aria-hidden="true">✓</span><h3>Integridade acadêmica</h3><p>Não produzimos trabalhos para apresentação indevida como autoria de terceiros e não garantimos aprovação ou publicação.</p></article>
+        </div>
+      </div>
+    </section>
 
-            <label for="complexidade">Tipo de Trabalho:</label>
-            <select id="complexidade" name="complexidade" required>
-                <option value="Revisão">Revisão</option>
-                <option value="Orientação">Orientação</option>
-                <option value="Escrita">Escrita de Documento</option>
-                <option value="Análise">Análise de Dados</option>
-            </select>
+    <section class="section faq-section" id="duvidas" aria-labelledby="duvidas-title">
+      <div class="container faq-grid">
+        <div class="faq-intro"><p class="eyebrow">Dúvidas frequentes</p><h2 id="duvidas-title">Transparência antes de começar.</h2><p>Respostas objetivas sobre escopo, autoria, orçamento e tratamento dos materiais.</p><a class="text-link" href="#orcamento">Descrever meu projeto <span aria-hidden="true">↓</span></a></div>
+        <div class="faq-list">
+          <details><summary>Como o orçamento é definido?</summary><p>Consideramos o tipo de serviço, o volume de material, a complexidade técnica e o prazo. O escopo e as condições são apresentados antes do início.</p></details>
+          <details><summary>Vocês produzem trabalhos para entrega como autoria do cliente?</summary><p>Não. O atendimento é técnico e consultivo: orientamos método, análise, revisão, formatação e comunicação científica, preservando a autoria e as decisões do pesquisador.</p></details>
+          <details><summary>Quais materiais preciso enviar?</summary><p>Isso depende da demanda. Na avaliação inicial, indicamos somente os arquivos necessários, como projeto, base de dados, normas da instituição ou versão atual do texto.</p></details>
+          <details><summary>Atendem ABNT e outras normas?</summary><p>Sim. A revisão e a formatação podem seguir ABNT, APA ou as diretrizes específicas informadas pela instituição ou pelo periódico.</p></details>
+          <details><summary>Como meus arquivos são tratados?</summary><p>Os materiais são utilizados apenas para avaliar e executar o serviço solicitado. Na primeira mensagem, evite incluir dados pessoais sensíveis ou informações sigilosas.</p></details>
+        </div>
+      </div>
+    </section>
 
-            <label for="pesquisa">Pesquisa Necessária (complexidade):</label>
-            <select id="pesquisa" name="pesquisa" required>
-                <option value="nenhuma">Nenhuma/ Baixa</option>
-                <option value="moderada">Moderada</option>
-                <option value="extensa">Extensa</option>
-            </select>
-
-            <label for="prazo_dias">Prazo em Dias:</label>
-            <select id="prazo_dias" name="prazo_dias" required>
-                <option value="90">Mais de 60 dias</option>
-                <option value="60">Até 60 dias</option>
-                <option value="30">Até 30 dias</option>
-                <option value="15">Até 15 dias</option>
-                <option value="7">Até 7 dias</option>
-            </select>
-
-            <label for="num_paginas">Número de Páginas:</label>
-            <input type="number" id="num_paginas" name="num_paginas" required>
-
-            <button type="button" onclick="calcularPreco()">Calcular Preço</button>
+    <section class="section budget-section" id="orcamento" aria-labelledby="orcamento-title">
+      <div class="container budget-grid">
+        <div><p class="eyebrow">Avaliação sob medida</p><h2 id="orcamento-title">Envie os dados principais e receba uma avaliação do projeto.</h2><p>O investimento depende do tipo de serviço, volume, complexidade e prazo. Primeiro entendemos a demanda; depois apresentamos escopo, prazo e condições antes de qualquer início.</p><p class="privacy-note">Não inclua dados pessoais sensíveis ou informações sigilosas nesta primeira mensagem.</p></div>
+        <form class="brief-form" id="brief-form">
+          <div class="field"><label for="servico">Serviço de interesse</label><select id="servico" name="servico" required><option value="">Selecione uma opção</option><option>Análise estatística e interpretação</option><option>Metodologia científica</option><option>Tratamento e análise de dados</option><option>Revisão e formatação acadêmica</option><option>Gráficos e visualizações científicas</option><option>Consultoria para artigo, dissertação ou tese</option><option>Apresentação acadêmica</option><option>Outro serviço de apoio à pesquisa</option></select></div>
+          <div class="form-row"><div class="field"><label for="prazo">Prazo desejado</label><input id="prazo" name="prazo" type="text" maxlength="80" placeholder="Ex.: até 15 dias" required></div><div class="field"><label for="etapa">Etapa do projeto</label><input id="etapa" name="etapa" type="text" maxlength="100" placeholder="Ex.: análise dos dados"></div></div>
+          <div class="field"><label for="detalhes">Resumo da necessidade</label><textarea id="detalhes" name="detalhes" rows="4" maxlength="1200" placeholder="Descreva brevemente o que você precisa e quais materiais já possui." required></textarea></div>
+          <button class="button" type="submit">Solicitar avaliação pelo WhatsApp <span aria-hidden="true">↗</span></button><p class="form-privacy">Este formulário não armazena seus dados; ele apenas prepara uma mensagem no WhatsApp.</p><p class="form-status" id="form-status" role="status" aria-live="polite"></p><a class="form-fallback" id="whatsapp-fallback" href="https://wa.me/5562992818326" target="_blank" rel="noopener noreferrer" hidden>Abrir a conversa novamente <span aria-hidden="true">↗</span></a>
         </form>
-        <div id="pricing-result" class="pricing-result"></div>
+      </div>
     </section>
 
-    <section id="team" class="team">
-        <h2>Nossa Equipe</h2>
-
-        <p> Na TCCexpresso, temos o orgulho de contar com uma equipe de especialistas altamente qualificados, com ampla experiência e formação acadêmica de excelência. Estamos prontos para oferecer soluções personalizadas e inovadoras nas áreas de Saúde, Exatas e Tecnologia.</p>
-
-        <p>Conheça a expertise que nossos profissionais trazem para cada projeto:</p>
-        <ul>
-            <li><strong>Saúde</strong>: Nosso doutor é um líder reconhecido na área da saúde, com uma vasta experiência em pesquisa e prática clínica. Ele possui um conhecimento profundo sobre as complexidades do setor e está apto a desenvolver soluções avançadas que atendem às necessidades mais exigentes. Sua abordagem inovadora e baseada em evidências é essencial para resolver desafios complexos e promover a excelência no cuidado e na pesquisa.</li>
-            <li><strong>Exatas</strong>: Nossa equipe inclui três mestres em áreas cruciais como Matemática, Estatística e Engenharia. Cada um desses profissionais traz um conjunto único de habilidades e experiências, garantindo uma análise rigorosa e precisa em todos os aspectos do projeto. Eles são especialistas em modelagem matemática, análise de dados e engenharia aplicada, proporcionando insights detalhados e soluções baseadas em dados robustos.</li>
-            <li><strong>Tecnologia</strong>: Nosso especialista em tecnologia possui um sólido conhecimento das mais recentes inovações e tendências tecnológicas. Ele está sempre atualizado com as últimas tecnologias emergentes e metodologias avançadas, oferecendo soluções que aproveitam o poder da tecnologia para resolver problemas complexos e impulsionar a transformação digital. Sua experiência inclui o desenvolvimento de soluções tecnológicas personalizadas, a integração de sistemas e a implementação de tecnologias de ponta.</li>
-        </ul>
+    <section class="section contact-section" id="contato" aria-labelledby="contato-title">
+      <div class="container contact-grid">
+        <div><p class="eyebrow">Contato</p><h2 id="contato-title">Vamos conversar sobre sua pesquisa?</h2><p>Escolha o canal mais conveniente. Para uma avaliação inicial mais precisa, informe o serviço, o prazo e a etapa atual do projeto.</p></div>
+        <div class="contact-links">
+          <a href="https://wa.me/5562992818326?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20do%20meu%20projeto." target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><strong>(62) 99281-8326</strong><i aria-hidden="true">↗</i></a>
+          <a href="mailto:tccanapolis@gmail.com"><span>E-mail</span><strong>tccanapolis@gmail.com</strong><i aria-hidden="true">↗</i></a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section id="testimonials" class="testimonials">
-        <h2>O que nossos clientes dizem</h2>
-        <p>"Excelente serviço de formatação! Meu trabalho foi entregue antes do prazo e estava impecável. A equipe demonstrou grande atenção aos detalhes e profissionalismo." - João Silva</p>
-        <p>"A análise de dados que eles fizeram foi essencial para o sucesso do meu projeto de pesquisa. Recebi insights valiosos que foram cruciais para minha análise final." - Maria Souza</p>
-        <p>"O atendimento foi excepcional. A equipe foi muito prestativa e sempre disponível para esclarecer dúvidas. A formatação e a revisão do meu documento foram feitas com precisão e eficiência." - Lucas Almeida</p>
-        <p>"Estou impressionado com a qualidade do trabalho. A formatação estava perfeita, e o suporte durante o processo foi muito eficiente. Recomendo a todos que precisam de um serviço de alta qualidade." - Ana Pereira</p>
-        <p>"O serviço de orientação acadêmica foi fundamental para a conclusão do meu trabalho. A equipe forneceu suporte detalhado e personalizado, que fez toda a diferença no meu projeto." - Carlos Lima</p>
-
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Entre em Contato</h2>
-        <p>Estamos aqui para ajudar! Entre em contato conosco através dos seguintes canais:</p>
-        
-        <ul>
-            <li><strong>Email:</strong> <a href="tccanapolis@gmail.com">tccanapolis@gmail.com</a></li>
-            <li><strong>WhatsApp:</strong> <a href="https://wa.me/5562992818326">Iniciar conversa</a></li>
-            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/tccexpressoaps/">TCCexpresso</a></li>
-
-        </ul>
-        
-        <p>Estamos ansiosos para ouvir de você e ajudar com o que precisar!</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Serviços de Formatação e Análise de Dados. Todos os direitos reservados.</p>
-    </footer>
-
-    <a href="#" class="back-to-top" id="backToTop">&#8679;</a>
-
-    <script>
-        function calcularPreco() {
-            const numPaginas = parseFloat(document.getElementById('num_paginas').value);
-            const complexidade = document.getElementById('complexidade').value;
-            const pesquisa = document.getElementById('pesquisa').value;
-            const prazoDias = document.getElementById('prazo_dias').value;
-    
-            const fatorComplexidade = {
-                "Revisão": 0.5,
-                "Orientação": 0.8,
-                "Escrita": 1.0,
-                "Análise": 1.5 // Pode ajustar o fator se necessário, mas o valor fixo será definido
-            };
-            const fatorPesquisa = {
-                "nenhuma": 1.0,
-                "moderada": 1.5,
-                "extensa": 2.0
-            };
-            const fatorPrazo = {
-                "90": 1.0,
-                "60": 1.1,
-                "30": 1.2,
-                "15": 2.0,
-                "7": 4.0
-            };
-    
-            const precoBasePorPagina = 20.0;
-            const precoFixoAnalise = 100.0; // Defina o preço fixo para "Análise"
-    
-            let precoTotal;
-    
-            if (complexidade === "Análise") {
-                precoTotal = precoFixoAnalise *
-                fatorPesquisa[pesquisa] *
-                fatorPrazo[prazoDias];
-            } else {
-                precoTotal = precoBasePorPagina * numPaginas *
-                    fatorComplexidade[complexidade] *
-                    fatorPesquisa[pesquisa] *
-                    fatorPrazo[prazoDias];
-            }
-    
-            // Verifica se precoTotal é NaN e define como 0 se for o caso
-            precoTotal = isNaN(precoTotal) ? 0 : precoTotal;
-    
-            const precoabsoluto = Math.abs(precoTotal);
-    
-            const valorMaior = Math.max(50, precoabsoluto);
-    
-            document.getElementById('pricing-result').innerText = `O preço total para o serviço é: R$ ${valorMaior.toFixed(2)}`;
-        }
-
-                // Mostrar o botão quando o usuário rolar para baixo
-        window.addEventListener('scroll', function() {
-            const backToTopButton = document.getElementById('backToTop');
-            if (window.scrollY > 300) { // Ajuste o valor conforme necessário
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-
-        // Rolagem suave para o topo
-        document.getElementById('backToTop').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-    </script>
-    
-
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="brand brand-footer" href="#topo"><span data-brand>Prisma <span>Pesquisa</span></span></a><p>Consultoria e serviços técnicos de apoio à pesquisa acadêmica e científica.</p></div>
+      <div><strong>Atalhos</strong><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#compromisso">Compromisso</a><a href="#duvidas">Dúvidas</a></div>
+      <div><strong>Contato</strong><a href="mailto:tccanapolis@gmail.com">E-mail</a><a href="https://wa.me/5562992818326" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+    </div>
+    <div class="container footer-bottom"><p>© <span id="current-year"></span> <span data-brand>Prisma <span>Pesquisa</span></span>. Todos os direitos reservados.</p><p>Apoio técnico e consultivo. A autoria e as decisões acadêmicas são do pesquisador.</p></div>
+  </footer>
+  <a href="#topo" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</a>
+  <script src="script.js" defer></script>
 </body>
-
 </html>

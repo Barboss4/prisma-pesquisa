@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://barboss4.github.io/prisma-pesquisa/sitemap.xml
