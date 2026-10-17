@@ -35,6 +35,7 @@ document.addEventListener("click", (event) => {
 
 const backToTop = document.getElementById("back-to-top");
 const siteHeader = document.querySelector(".site-header");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const navLinks = [...document.querySelectorAll('.main-nav a[href^="#"]')];
 const navSections = [...document.querySelectorAll("main section[id]")];
 const updateScrollUI = () => {
@@ -49,11 +50,23 @@ const updateScrollUI = () => {
     if (isActive) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
   });
-  backToTop.classList.toggle("show", window.scrollY > 500);
+  const showBackToTop = window.scrollY > 500;
+  backToTop.classList.toggle("show", showBackToTop);
+  backToTop.setAttribute("aria-hidden", String(!showBackToTop));
+  backToTop.tabIndex = showBackToTop ? 0 : -1;
   siteHeader.classList.toggle("scrolled", window.scrollY > 12);
 };
 window.addEventListener("scroll", updateScrollUI, { passive: true });
 window.addEventListener("resize", updateScrollUI);
+backToTop.addEventListener("click", (event) => {
+  event.preventDefault();
+  try {
+    window.scrollTo({ top: 0, left: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  } catch {
+    window.scrollTo(0, 0);
+  }
+  if (window.location.hash) history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+});
 updateScrollUI();
 
 const serviceSelect = document.getElementById("servico");
@@ -181,7 +194,6 @@ document.getElementById("brief-form").addEventListener("submit", (event) => {
   window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 });
 
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if ("IntersectionObserver" in window && !reduceMotion) {
   const revealTargets = document.querySelectorAll(".section-heading, .service-card, .steps li, .values-grid article, .faq-list details, .brief-form, .contact-links a");
   const revealObserver = new IntersectionObserver((entries, observer) => {
