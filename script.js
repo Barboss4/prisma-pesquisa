@@ -1,6 +1,6 @@
 const SITE_CONFIG = window.PRISMA_CONFIG || Object.freeze({
   brandName: "Prisma Pesquisa", positioning: "Dados, Tecnologia e Pesquisa",
-  operationalEmail: "tccanapolis@gmail.com", whatsappNumber: "5562992818326", whatsappDisplay: "(62) 99281-8326"
+  whatsappNumber: "5562992818326", whatsappDisplay: "(62) 99281-8326"
 });
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -11,10 +11,6 @@ const backToTop = document.getElementById("back-to-top");
 
 document.querySelectorAll("[data-brand]").forEach((el) => { el.textContent = SITE_CONFIG.brandName; });
 document.querySelectorAll("[data-positioning]").forEach((el) => { el.textContent = SITE_CONFIG.positioning; });
-document.querySelectorAll("[data-contact-email]").forEach((el) => {
-  el.textContent = SITE_CONFIG.operationalEmail;
-  if (el.matches("a")) el.href = `mailto:${SITE_CONFIG.operationalEmail}`;
-});
 document.querySelectorAll("[data-whatsapp-display]").forEach((el) => { el.textContent = SITE_CONFIG.whatsappDisplay; });
 document.querySelectorAll("[data-whatsapp-link]").forEach((el) => {
   const message = el.dataset.message || "Olá! Gostaria de solicitar um orçamento para meu projeto.";
