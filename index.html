@@ -24,34 +24,69 @@
   <meta name="twitter:title" content="Prisma Pesquisa | Dados, Tecnologia e Pesquisa">
   <meta name="twitter:description" content="Análise de dados, automação, programação e desenvolvimento digital para pesquisadores e empresas.">
   <meta name="twitter:image" content="https://prismapesquisa.com.br/logo-prisma.png">
+  <meta name="twitter:image:alt" content="Logotipo da Prisma Pesquisa">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":["Organization","ProfessionalService"],
-    "@id":"https://prismapesquisa.com.br/#organization",
-    "name":"Prisma Pesquisa",
-    "url":"https://prismapesquisa.com.br/",
-    "logo":"https://prismapesquisa.com.br/logo-prisma.png",
-    "description":"Soluções em análise estatística, automação, programação, dashboards, desenvolvimento digital e consultoria científica.",
-    "telephone":"+55 62 99281-8326",
-    "areaServed":{"@type":"Country","name":"Brasil"},
-    "availableLanguage":"pt-BR",
-    "knowsAbout":["Análise estatística","Ciência de dados","Automação de processos","Python","Business Intelligence","Desenvolvimento web","Metodologia científica"],
-    "hasOfferCatalog":{"@type":"OfferCatalog","name":"Soluções em dados, tecnologia e pesquisa","itemListElement":[
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Análise estatística"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Automação de planilhas e processos"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Dashboards e Business Intelligence"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Desenvolvimento em Python"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Criação de sites e sistemas"}}
-    ]}
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "@id":"https://prismapesquisa.com.br/#website",
+        "name":"Prisma Pesquisa",
+        "url":"https://prismapesquisa.com.br/",
+        "inLanguage":"pt-BR",
+        "publisher":{"@id":"https://prismapesquisa.com.br/#organization"}
+      },
+      {
+        "@type":"Organization",
+        "@id":"https://prismapesquisa.com.br/#organization",
+        "name":"Prisma Pesquisa",
+        "url":"https://prismapesquisa.com.br/",
+        "logo":{"@type":"ImageObject","url":"https://prismapesquisa.com.br/logo-prisma.png","width":512,"height":512},
+        "description":"Soluções em análise estatística, automação, programação, dashboards, desenvolvimento digital e consultoria científica.",
+        "telephone":"+55 62 99281-8326",
+        "contactPoint":{"@type":"ContactPoint","contactType":"Atendimento ao cliente","telephone":"+55 62 99281-8326","availableLanguage":"Portuguese"},
+        "areaServed":{"@type":"Country","name":"Brasil"},
+        "availableLanguage":"pt-BR",
+        "knowsAbout":["Análise estatística","Ciência de dados","Automação de processos","Python","Business Intelligence","Desenvolvimento web","Metodologia científica"],
+        "hasOfferCatalog":{"@type":"OfferCatalog","name":"Soluções em dados, tecnologia e pesquisa","itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Análise estatística"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Automação de planilhas e processos"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Dashboards e Business Intelligence"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Desenvolvimento em Python"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Criação de sites e sistemas"}}
+        ]}
+      }
+    ]
   }
+  </script>
+  <script>
+    (() => {
+      const serviceRoutes = {
+        "Análise estatística": "servicos/analise-estatistica/",
+        "Automação de planilhas e processos": "servicos/automacao-planilhas/",
+        "Dashboards e Business Intelligence": "servicos/dashboards-bi/",
+        "Desenvolvimento em Python": "servicos/desenvolvimento-python/",
+        "Criação de sites e sistemas": "servicos/criacao-sites/",
+        "Automações com inteligência artificial": "servicos/automacoes-ia/",
+        "Consultoria científica e metodológica": "servicos/consultoria-cientifica/",
+        "Gráficos e visualização científica": "servicos/visualizacao-cientifica/",
+        "Machine Learning e modelagem preditiva": "servicos/machine-learning/"
+      };
+      const parameters = new URLSearchParams(location.search);
+      const destination = serviceRoutes[parameters.get("servico")];
+      if (!destination) return;
+      parameters.delete("servico");
+      const remainingQuery = parameters.toString();
+      location.replace(`/${destination}${remainingQuery ? `?${remainingQuery}` : ""}`);
+    })();
   </script>
 </head>
 <body id="topo">
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#topo" aria-label="Prisma Pesquisa — início"><img src="logo-prisma.png" alt="" width="46" height="46"><span class="brand-copy"><strong data-brand>Prisma Pesquisa</strong><small data-positioning>Dados, Tecnologia e Pesquisa</small></span></a>
+      <a class="brand" href="#topo" aria-label="Prisma Pesquisa — início"><img src="logo-prisma.png" alt="Logotipo Prisma Pesquisa" width="46" height="46"><span class="brand-copy"><strong data-brand>Prisma Pesquisa</strong><small data-positioning>Dados, Tecnologia e Pesquisa</small></span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-principal"><span class="sr-only">Abrir menu</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
       <nav id="menu-principal" class="main-nav" aria-label="Navegação principal"><a href="#topo">Início</a><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#sobre">Sobre</a><a href="#duvidas">Perguntas frequentes</a><a href="#contato">Contato</a><a class="nav-mobile-cta" href="#orcamento">Solicitar orçamento</a></nav>
       <a class="button button-small header-cta" href="#orcamento">Solicitar orçamento</a>
@@ -63,8 +98,8 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Dados, tecnologia e pesquisa</p>
-          <h1 id="hero-title">Dados, tecnologia e inteligência para transformar suas ideias em <em>resultados.</em></h1>
-          <p class="hero-lead">Soluções especializadas em análise estatística, automação, programação e desenvolvimento digital para pesquisadores, profissionais e empresas.</p>
+          <h1 id="hero-title">Prisma Pesquisa: <em>soluções em dados, estatística e tecnologia.</em></h1>
+          <p class="hero-lead">Transformamos dados e desafios em soluções inteligentes para pesquisadores, profissionais e empresas, convertendo ideias em resultados com clareza técnica.</p>
           <div class="hero-actions"><a class="button" href="#orcamento">Solicitar orçamento <span aria-hidden="true">→</span></a><a class="button button-ghost" href="#servicos">Conhecer serviços</a></div>
           <ul class="trust-list" aria-label="Princípios do atendimento"><li>Escopo claro</li><li>Orçamento personalizado</li><li>Comunicação direta</li></ul>
         </div>
@@ -134,7 +169,7 @@
     <section class="section contact-section" id="contato" aria-labelledby="contato-title"><div class="container contact-grid"><div><p class="eyebrow">Contato</p><h2 id="contato-title">Seu projeto precisa de uma solução especializada?</h2><p>Converse conosco e descubra como transformar sua necessidade em uma solução prática.</p></div><div class="contact-links"><a data-whatsapp-link data-message="Olá! Quero conversar sobre um projeto e solicitar um orçamento." href="https://wa.me/5562992818326" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><strong data-whatsapp-display>(62) 99281-8326</strong><i aria-hidden="true">↗</i></a></div></div></section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand-footer" href="#topo"><img src="logo-prisma.png" alt="" width="44" height="44"><span class="brand-copy"><strong data-brand>Prisma Pesquisa</strong><small data-positioning>Dados, Tecnologia e Pesquisa</small></span></a><p>Transformamos dados e desafios em soluções inteligentes para pesquisa, trabalho e negócios.</p></div><div><strong>Soluções</strong><a href="servicos/analise-estatistica/">Análise estatística</a><a href="servicos/automacao-planilhas/">Automação</a><a href="servicos/desenvolvimento-python/">Python</a><a href="servicos/criacao-sites/">Sites e sistemas</a></div><div><strong>Institucional</strong><a href="sobre/">Sobre</a><a href="conteudos/">Conteúdos</a><a href="privacidade/">Privacidade</a><a href="#contato">Contato</a></div></div><div class="container footer-bottom"><p>© <span data-current-year></span> <span data-brand>Prisma Pesquisa</span>. Todos os direitos reservados.</p><p>Orçamentos definidos conforme escopo, complexidade e prazo.</p></div></footer>
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand-footer" href="#topo"><img src="logo-prisma.png" alt="Logotipo Prisma Pesquisa" width="44" height="44"><span class="brand-copy"><strong data-brand>Prisma Pesquisa</strong><small data-positioning>Dados, Tecnologia e Pesquisa</small></span></a><p>Transformamos dados e desafios em soluções inteligentes para pesquisa, trabalho e negócios.</p></div><div><strong>Soluções</strong><a href="servicos/analise-estatistica/">Análise estatística</a><a href="servicos/automacao-planilhas/">Automação</a><a href="servicos/desenvolvimento-python/">Python</a><a href="servicos/criacao-sites/">Sites e sistemas</a></div><div><strong>Institucional</strong><a href="sobre/">Sobre</a><a href="conteudos/">Conteúdos</a><a href="privacidade/">Privacidade</a><a href="#contato">Contato</a></div></div><div class="container footer-bottom"><p>© <span data-current-year></span> <span data-brand>Prisma Pesquisa</span>. Todos os direitos reservados.</p><p>Orçamentos definidos conforme escopo, complexidade e prazo.</p></div></footer>
   <a href="#topo" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo" aria-hidden="true" tabindex="-1">↑</a>
   <script src="site-config.js?v=20261017b" defer></script><script src="script.js?v=20261026a" defer></script>
 </body>
