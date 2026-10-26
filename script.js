@@ -91,6 +91,7 @@ const needQuestion = document.getElementById("need-question");
 const needOptions = document.getElementById("need-options");
 const serviceGuideCopy = document.getElementById("service-guide-copy");
 const formStatus = document.getElementById("form-status");
+const serviceStorageKey = "prisma:selected-service";
 
 const serviceGuidance = {
   "Não sei qual serviço preciso": ["Qual situação descreve melhor o seu momento?", "Não tem problema se nenhuma opção for exata. A resposta serve para direcionar a conversa inicial.", ["Tenho dados e preciso entender o que fazer", "Quero automatizar uma tarefa repetitiva", "Preciso criar uma ferramenta ou presença digital", "Preciso estruturar uma pesquisa", "Prefiro explicar com minhas palavras"]],
@@ -127,20 +128,25 @@ const updateServiceGuide = () => {
 
 if (serviceSelect) {
   serviceSelect.addEventListener("change", () => { updateServiceGuide(); if (formStatus) formStatus.textContent = ""; });
-  const requestedService = new URLSearchParams(location.search).get("servico");
+  const queryService = new URLSearchParams(location.search).get("servico");
+  const requestedService = queryService || sessionStorage.getItem(serviceStorageKey);
   if (requestedService && [...serviceSelect.options].some((option) => option.value === requestedService)) {
     serviceSelect.value = requestedService;
     updateServiceGuide();
     if (formStatus) formStatus.textContent = `Serviço selecionado: ${requestedService}.`;
-    history.replaceState(null, "", location.pathname);
   }
+  sessionStorage.removeItem(serviceStorageKey);
+  if (queryService) history.replaceState(null, "", `${location.pathname}${location.hash}`);
 }
 
 document.querySelectorAll("[data-service]").forEach((link) => {
   link.addEventListener("click", () => {
+    const requestedService = link.dataset.service;
+    sessionStorage.setItem(serviceStorageKey, requestedService);
     if (!serviceSelect) return;
-    serviceSelect.value = link.dataset.service; updateServiceGuide();
-    if (formStatus) formStatus.textContent = `Serviço selecionado: ${link.dataset.service}.`;
+    serviceSelect.value = requestedService; updateServiceGuide();
+    sessionStorage.removeItem(serviceStorageKey);
+    if (formStatus) formStatus.textContent = `Serviço selecionado: ${requestedService}.`;
   });
 });
 
